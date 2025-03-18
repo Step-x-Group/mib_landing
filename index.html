@@ -1,0 +1,367 @@
+ <div className="flex min-h-screen flex-col bg-[#fdf6e3]">
+      <header className="container flex h-20 items-center justify-between py-6">
+        <div className="flex items-center gap-2">
+          <img src="/placeholder.svg?height=40&width=40" alt="Made in Bloomsbury Logo" className="h-10 w-10" />
+          <span className="text-lg font-medium">Made in Bloomsbury</span>
+        </div>
+        <nav className="hidden md:flex items-center gap-6">
+          <a href="#about" className="text-sm font-medium hover:underline">
+            About
+          </a>
+          <a href="#solutions" className="text-sm font-medium hover:underline">
+            Solutions
+          </a>
+          <a href="#pricing" className="text-sm font-medium hover:underline">
+            Pricing
+          </a>
+          <a href="#contact" className="text-sm font-medium hover:underline">
+            Contact
+          </a>
+        </nav>
+        <Button className="bg-black text-white hover:bg-black/90">Subscribe</Button>
+      </header>
+
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="py-20 md:py-32 bg-[#fdf6e3] text-center">
+          <div className="container px-4 md:px-6">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight max-w-3xl mx-auto">
+              MAKING ENVIRONMENTAL MARKETS CLEAR, ACTIONABLE, AND AUTHENTIC
+            </h1>
+            <p className="mt-6 text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+              Let's create value and save costs together
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+              <Button className="bg-black text-white hover:bg-black/90 px-8 py-6 text-lg">
+                Subscribe to Our Research
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button variant="outline" className="border-black text-black hover:bg-black/5 px-8 py-6 text-lg">
+                Learn More
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Mission Section */}
+        <section id="about" className="py-20 bg-white">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight">Our Mission</h2>
+                <p className="mt-4 text-lg text-muted-foreground">
+                  To simplify complex environmental markets —empowering organizations to make data-driven decisions
+                  about carbon compliance, natural capital, and resource management for sustainable, cost-effective
+                  outcomes.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <div className="bg-[#fdf6e3] p-6 rounded-lg">
+                  <h3 className="font-bold">What?</h3>
+                  <p className="text-muted-foreground">
+                    Businesses face complex, fragmented data when trying to navigate carbon compliance, natural capital,
+                    and resource management. This lack of clarity leads to higher costs, missed opportunities, and
+                    confusion.
+                  </p>
+                </div>
+                <div className="bg-[#fdf6e3] p-6 rounded-lg">
+                  <h3 className="font-bold">Why?</h3>
+                  <p className="text-muted-foreground">
+                    Without streamlined, data-driven research and economic analysis, organizations risk non-compliance,
+                    inefficient resource use, and inability to track the return on their sustainability efforts.
+                  </p>
+                </div>
+                <div className="bg-[#fdf6e3] p-6 rounded-lg">
+                  <h3 className="font-bold">Why now?</h3>
+                  <p className="text-muted-foreground">
+                    As regulations tighten and demand for climate accountability accelerates, immediate action is
+                    essential. Early adopters gain a competitive edge, avoid penalties, and position themselves for the
+                    future.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Solutions Section */}
+        <section id="solutions" className="py-20 bg-[#fdf6e3]">
+          <div className="container px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight">Our Solutions</h2>
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+                We deliver on-demand research and advanced economic analysis, simplifying carbon compliance and resource
+                management so organizations can make cost-effective, data-driven decisions.
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              <Card className="bg-white">
+                <CardHeader>
+                  <BookOpen className="h-10 w-10 mb-2" />
+                  <CardTitle>Substack Research</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>• EU ETS Report</li>
+                    <li>• Biodiversity Sentiment Analysis</li>
+                    <li>• Nature and Climate Tech Report</li>
+                    <li>• Weekly Podcast</li>
+                  </ul>
+                </CardContent>
+              </Card>
+              <Card className="bg-white">
+                <CardHeader>
+                  <MessageSquare className="h-10 w-10 mb-2" />
+                  <CardTitle>Economist Bot</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>• Impact Analysis</li>
+                    <li>• Cost Benefit Analysis</li>
+                    <li>• Tariffs</li>
+                    <li>• Forecasting and Nowcasting</li>
+                  </ul>
+                </CardContent>
+              </Card>
+              <Card className="bg-white">
+                <CardHeader>
+                  <BarChart2 className="h-10 w-10 mb-2" />
+                  <CardTitle>Natural Capital Indices</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>Coming soon</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section id="pricing" className="py-20 bg-white">
+          <div className="container px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight">Pricing Plans</h2>
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+                Choose the plan that works best for your organization
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              <Card className="bg-[#fdf6e3]">
+                <CardHeader>
+                  <CardTitle>Freemium</CardTitle>
+                  <CardDescription className="text-2xl font-bold">Free</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>• 1 team account</li>
+                    <li>• Access to Weekly Podcast</li>
+                    <li>• Access to Weekly Research</li>
+                    <li>• Access to Notes</li>
+                  </ul>
+                </CardContent>
+              </Card>
+              <Card className="bg-[#fdf6e3] border-black">
+                <CardHeader>
+                  <CardTitle>Teams</CardTitle>
+                  <CardDescription className="text-2xl font-bold">£2,900/year</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>• 1 team account</li>
+                    <li>• Access to Exclusive Research</li>
+                    <li>• Discount for Economist Bot</li>
+                    <li>• Discount for Indices</li>
+                  </ul>
+                </CardContent>
+              </Card>
+              <Card className="bg-[#fdf6e3]">
+                <CardHeader>
+                  <CardTitle>Enterprise</CardTitle>
+                  <CardDescription className="text-2xl font-bold">Contact us</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>• 50+ team accounts</li>
+                    <li>• Access to Exclusive Research</li>
+                    <li>• Discount for Economist Bot</li>
+                    <li>• Discount for Indices</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Market Size Section */}
+        <section className="py-20 bg-[#fdf6e3]">
+          <div className="container px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight">Market Opportunity</h2>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3 max-w-3xl mx-auto">
+              <Card className="bg-white text-center">
+                <CardHeader>
+                  <CardTitle className="text-4xl font-bold">$3.5B</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="font-medium">TOTAL AVAILABLE MARKET</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-white text-center">
+                <CardHeader>
+                  <CardTitle className="text-4xl font-bold">$525M</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="font-medium">SERVICEABLE AVAILABLE MARKET</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-white text-center">
+                <CardHeader>
+                  <CardTitle className="text-4xl font-bold">$52.5M</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="font-medium">SERVICEABLE OBTAINABLE MARKET</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Team Section */}
+        <section className="py-20 bg-white">
+          <div className="container px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight">Our Team</h2>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2 max-w-2xl mx-auto">
+              <Card className="bg-[#fdf6e3]">
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center">
+                    <img
+                      src="/placeholder.svg?height=120&width=120"
+                      alt="Michael Testa"
+                      className="rounded-full h-24 w-24 mb-4"
+                    />
+                    <h3 className="text-xl font-bold">Michael Testa</h3>
+                    <p className="text-muted-foreground">CEO & CO-FOUNDER</p>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="bg-[#fdf6e3]">
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center">
+                    <img
+                      src="/placeholder.svg?height=120&width=120"
+                      alt="Stefano Paluello"
+                      className="rounded-full h-24 w-24 mb-4"
+                    />
+                    <h3 className="text-xl font-bold">Stefano Paluello</h3>
+                    <p className="text-muted-foreground">CTO & CO-FOUNDER</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-black text-white">
+          <div className="container px-4 md:px-6 text-center">
+            <h2 className="text-3xl font-bold tracking-tight mb-6">
+              Ready to navigate environmental markets with confidence?
+            </h2>
+            <p className="text-lg mb-8 max-w-2xl mx-auto">
+              Join over 2,000 subscribers who are already benefiting from our research and insights.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="px-4 py-3 rounded-md text-black w-full"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <Button className="bg-white text-black hover:bg-white/90 whitespace-nowrap">Subscribe Now</Button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="bg-[#fdf6e3] py-12 border-t">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <img src="/placeholder.svg?height=40&width=40" alt="Made in Bloomsbury Logo" className="h-10 w-10" />
+                <span className="text-lg font-medium">Made in Bloomsbury</span>
+              </div>
+              <p className="text-sm text-muted-foreground">Helping businesses navigate the era of green mercantilism</p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-4">Contact</h3>
+              <address className="not-italic text-sm text-muted-foreground">
+                2 Devonshire Court, Boswell Street,
+                <br />
+                WC1N 3PX, London, UK
+                <br />
+                <a href="mailto:Michael.testa@madeinbloomsbury.com" className="hover:underline">
+                  Michael.testa@madeinbloomsbury.com
+                </a>
+                <br />
+                <a href="tel:+447477907584" className="hover:underline">
+                  +447477907584
+                </a>
+              </address>
+            </div>
+            <div>
+              <h3 className="font-medium mb-4">Solutions</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <a href="#" className="hover:underline">
+                    Substack Research
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:underline">
+                    Economist Bot
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:underline">
+                    Natural Capital Indices
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:underline">
+                    Consulting
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-medium mb-4">Legal</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <a href="#" className="hover:underline">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:underline">
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:underline">
+                    Cookie Policy
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-12 text-center text-sm text-muted-foreground">
+            © 2025 Made in Bloomsbury. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
