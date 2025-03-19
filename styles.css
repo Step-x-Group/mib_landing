@@ -217,6 +217,11 @@ a {
   margin-top: var(--spacing-xl);
 }
 
+.button-center {
+    margin: 0 auto;
+    display: block;
+}
+
 @media (min-width: 640px) {
   .button-group {
     flex-direction: row;
