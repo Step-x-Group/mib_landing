@@ -10,19 +10,18 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="header-container">
-            <a href="/" class="logo">
-                <div class="logo-circle"></div>
-                <span class="logo-text">Made in Bloomsbury</span>
-            </a>
-
-            <nav class="main-nav">
-                <a href="/index.html">Home</a>
-            </nav>
-
-            <button class="subscribe-btn">Subscribe</button>
+    <header class="header">
+      <div class="container header-container">
+        <div class="logo">
+          <img src="img/thinking.jpeg?height=40&width=40" alt="Made in Bloomsbury Logo" class="logo-img">
+          <span class="logo-text">Made in Bloomsbury</span>
         </div>
+        <nav class="main-nav">
+            <a href="/index.html">Home</a>
+        </nav>
+        <button class="button button-primary">
+        </button>
+      </div>
     </header>
 
     <!-- Dashboard Layout -->
@@ -30,19 +29,20 @@
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
             <nav class="sidebar-nav">
-                <a href="/biodiversity">Dashboard</a>
+                <a href="/biodiversity" class="active">Dashboard</a>
                 <a href="/biodiversity/methodology">Methodology</a>
-                <a href="/biodiversity/countries" class="active">Countries</a>
+                <a href="/biodiversity/countries">Countries</a>
                 <a href="/biodiversity/credits">Credits</a>
             </nav>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
-            <h1 class="page-title">Biodiversity Net Gain Index</h1>
 
-            <!-- Main Chart -->
+            <h1 class="page-title">Biodiversity Net Gain Index</h1>
             <div class="chart-container">
+                <!-- Main Chart -->
+                <!--<div class="chart-container">-->
                 <img src="/placeholder-images/biodiversity-trend-chart.jpg" alt="Biodiversity Net Gain Index Trend Chart" class="chart-image">
                 <!-- If you have actual images, replace the src with the actual path -->
                 <!-- Alternatively, you can use: -->
@@ -50,34 +50,6 @@
             </div>
 
             <!-- Two Column Charts -->
-            <div class="chart-row">
-                <!-- Map Chart -->
-                <div class="chart-col">
-                    <h2 class="chart-title">BNG Index by LPA</h2>
-                    <img src="/placeholder-images/bng-map.jpg" alt="BNG Index by Local Planning Authority Map" class="chart-image">
-                    <!-- If you have actual images, replace the src with the actual path -->
-                    <!-- Alternatively, you can use: -->
-                    <!-- <img src="/placeholder.svg?height=300&width=500" alt="BNG Index by Local Planning Authority Map" class="chart-image"> -->
-                </div>
-
-                <!-- Habitat Chart -->
-                <div class="chart-col">
-                    <h2 class="chart-title">Habitat Composition</h2>
-                    <img src="/placeholder-images/habitat-composition.jpg" alt="Habitat Composition Bar Chart" class="chart-image">
-                    <!-- If you have actual images, replace the src with the actual path -->
-                    <!-- Alternatively, you can use: -->
-                    <!-- <img src="/placeholder.svg?height=300&width=500" alt="Habitat Composition Bar Chart" class="chart-image"> -->
-                </div>
-            </div>
-
-            <!-- Call to Action - Similar to main site -->
-            <div class="cta-section">
-                <p class="cta-text">Let's create value and save costs together</p>
-                <div class="cta-buttons">
-                    <button class="cta-btn-primary">Subscribe to Our Research →</button>
-                    <button class="cta-btn-secondary">Learn More</button>
-                </div>
-            </div>
         </main>
     </div>
 </body>
