@@ -386,6 +386,7 @@ a {
   border-radius: var(--border-radius);
   overflow: hidden;
   height: 100%;
+  padding: 0.7%;
 }
 
 .card-white {
