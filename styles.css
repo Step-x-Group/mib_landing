@@ -49,6 +49,55 @@ a {
 }
 
 /* Layout */
+
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  border-right: 1px solid #e5e5e5;
+  flex-shrink: 0;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-nav a {
+  padding: 1.5rem;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.sidebar-nav a:hover {
+  background-color: #f0f0f0;
+}
+
+.sidebar-nav a.active {
+  background-color: #e5e5e5;
+}
+
+/* Main content layout */
+.dashboard-container {
+  display: flex;
+  min-height: calc(100vh - 60px);
+            background-color: #fdf9f0;
+            color: #000;
+}
+
+/* Main content styles */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -60,6 +109,41 @@ a {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
+}
+
+/* Chart containers */
+.chart-container {
+    border: 1px solid #e5e5e5;
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #fff;
+}
+
+.chart-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.chart-col {
+    flex: 1;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+    background-color: #fff;
+}
+
+.chart-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.chart-image {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .section {
@@ -157,12 +241,47 @@ a {
   text-decoration: underline;
 }
 
+/* Responsive styles */
 @media (min-width: 768px) {
   .nav {
     display: flex;
   }
 }
+@media (max-width: 768px) {
+  .dashboard-container {
+      flex-direction: column;
+  }
 
+  .sidebar {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #e5e5e5;
+  }
+
+  .sidebar-nav {
+      flex-direction: row;
+      overflow-x: auto;
+  }
+
+  .sidebar-nav a {
+      padding: 1rem;
+      font-size: 1rem;
+  }
+
+  .chart-row {
+      flex-direction: column;
+  }
+
+  .main-nav {
+      display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .chart-row {
+      flex-direction: column;
+  }
+}
 /* Buttons */
 .button {
   display: inline-flex;
@@ -267,6 +386,7 @@ a {
   border-radius: var(--border-radius);
   overflow: hidden;
   height: 100%;
+  padding: 0.7%;
 }
 
 .card-white {

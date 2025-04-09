@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodiversity Net Gain Index | Made in Bloomsbury</title>
+    <style>
+        /* Base styles to match Made in Bloomsbury */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdf9f0;
+            color: #000;
+        }
+
+        /* Header styles */
+        header {
+            border-bottom: 1px solid #e5e5e5;
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .logo-circle {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            font-weight: 500;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .main-nav a:hover {
+            color: #666;
+        }
+
+        .subscribe-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Main content layout */
+        .dashboard-container {
+            display: flex;
+            min-height: calc(100vh - 60px);
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 250px;
+            border-right: 1px solid #e5e5e5;
+            flex-shrink: 0;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-nav a {
+            padding: 1.5rem;
+            text-decoration: none;
+            color: #000;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .sidebar-nav a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .sidebar-nav a.active {
+            background-color: #e5e5e5;
+        }
+
+        /* Main content styles */
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        /* Chart containers */
+        .chart-container {
+            border: 1px solid #e5e5e5;
+            border-radius: 0.25rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: #fff;
+        }
+
+        .chart-row {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-col {
+            flex: 1;
+            border: 1px solid #e5e5e5;
+            border-radius: 0.25rem;
+            padding: 1.5rem;
+            background-color: #fff;
+        }
+
+        .chart-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .chart-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* CTA section */
+        .cta-section {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-text {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .cta-btn-primary {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .cta-btn-secondary {
+            background-color: transparent;
+            color: #000;
+            border: 1px solid #000;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .dashboard-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #e5e5e5;
+            }
+
+            .sidebar-nav {
+                flex-direction: row;
+                overflow-x: auto;
+            }
+
+            .sidebar-nav a {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .chart-row {
+                flex-direction: column;
+            }
+
+            .main-nav {
+                display: none;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .chart-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">
+                <div class="logo-circle"></div>
+                <span class="logo-text">Made in Bloomsbury</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="/about">About</a>
+                <a href="/solutions">Solutions</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/contact">Contact</a>
+            </nav>
+
+            <button class="subscribe-btn">Subscribe</button>
+        </div>
+    </header>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="/biodiversity">Dashboard</a>
+                <a href="/biodiversity/methodology">Methodology</a>
+                <a href="/biodiversity/countries" class="active">Countries</a>
+                <a href="/biodiversity/credits">Credits</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="page-title">Biodiversity Net Gain Index</h1>
+
+            <!-- Main Chart -->
+            <div class="chart-container">
+                <img src="/placeholder-images/biodiversity-trend-chart.jpg" alt="Biodiversity Net Gain Index Trend Chart" class="chart-image">
+                <!-- If you have actual images, replace the src with the actual path -->
+                <!-- Alternatively, you can use: -->
+                <!-- <img src="/placeholder.svg?height=300&width=1000" alt="Biodiversity Net Gain Index Trend Chart" class="chart-image"> -->
+            </div>
+
+            <!-- Two Column Charts -->
+            <div class="chart-row">
+                <!-- Map Chart -->
+                <div class="chart-col">
+                    <h2 class="chart-title">BNG Index by LPA</h2>
+                    <img src="/placeholder-images/bng-map.jpg" alt="BNG Index by Local Planning Authority Map" class="chart-image">
+                    <!-- If you have actual images, replace the src with the actual path -->
+                    <!-- Alternatively, you can use: -->
+                    <!-- <img src="/placeholder.svg?height=300&width=500" alt="BNG Index by Local Planning Authority Map" class="chart-image"> -->
+                </div>
+
+                <!-- Habitat Chart -->
+                <div class="chart-col">
+                    <h2 class="chart-title">Habitat Composition</h2>
+                    <img src="/placeholder-images/habitat-composition.jpg" alt="Habitat Composition Bar Chart" class="chart-image">
+                    <!-- If you have actual images, replace the src with the actual path -->
+                    <!-- Alternatively, you can use: -->
+                    <!-- <img src="/placeholder.svg?height=300&width=500" alt="Habitat Composition Bar Chart" class="chart-image"> -->
+                </div>
+            </div>
+
+            <!-- Call to Action - Similar to main site -->
+            <div class="cta-section">
+                <p class="cta-text">Let's create value and save costs together</p>
+                <div class="cta-buttons">
+                    <button class="cta-btn-primary">Subscribe to Our Research →</button>
+                    <button class="cta-btn-secondary">Learn More</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
