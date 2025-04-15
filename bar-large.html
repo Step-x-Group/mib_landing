@@ -1,0 +1,109 @@
+<!--
+	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=bar-large&code=MYewdgzgLgBAJgQyggwiArmWBeGBWAUzwG4AoEABygEtwZcBvUmGGqAGwIC4YmWWoBAB5QeBYAAsEAJygQAdADMQ0gLZJ5COHDSr1EABSJkaTFACUMANQwA5DAAiSBLYA0zfp0WiYARgAMHgC-7gIgIOwARiBCPHz8igRI6NLcvB788M4AWuGqcRmZMACeAIJC1BAAkmBwwjyKCOwQBIUsIW0wEAgAbgSl1eoA5mnxRTAU1EIE7ABKSLQ8AEydQYVr7aGs4ew0FAWZUNLUQyPSPLYIFRBuhVeVAAog1FgE5-njUMUUabYQUnAQAB3WzrYJbIbHOAHfjRKBQED5GAATkCmw8xgQuURPAA2oUxvwvj8Li8INQ6qDMh1MoSBN9fhB2BS3lT-BsYABdLZCcqVGEsTF42z-ADMAHoxeKlv4lng3CKACySiUyuUK_x4FXS2Xy1wigBs2rVepFAHZjbqFQFLer9b5fLbTb4lk7rRKpSbrcrPVb7RbfXbbL4ABxu-3I8O2GVRpaOwOmpY-1V-6NahMKpZGjP6pYBlPq7kwQrkzhYBpNFpbFgQCjMqAAGReo06_2BFearWp7nBHjK1wFXTr1CgpVSCEHNYk7ZgjU7YPRNbe1AIEDxBM6xN-kRkt3GmJgPBguIC_lcyJD8mRBsVirwvmRovPl_8Zt8BqWooNZuf8jlr6WEMP1cAIlnkEMzRDPAzVlECxXkaD_H8ZEkzg3x5DNRUlmRW9fHPZEMMAs08zwA00Pkfw7zFVDQPkB9RVFMUyNog0IJQpY4LAvAQ1vM17zg_xwLlA08DwJ9T3kRUzVFN9fDwfDwORN88Gw5Ff2RXwzTNA1rzIi9JOIm8tKfZECMfGUDQNTUBKvVEb0VblOnFcUYAAZQIWAAAN2BkEZPNnFQYB86QRiyZAYAQVQMCwJzxWCkYeCOdACGrGAOU5UggmIIA
+	⚠ Please be aware that this chart is not an official demo of Apache ECharts but is made by user-generated code.
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://echarts.apache.org/en/js/vendors/echarts-gl/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://echarts.apache.org/en/js/vendors/echarts-stat/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-graph-modularity extension
+  <script type="text/javascript" src="https://echarts.apache.org/en/js/vendors/echarts-graph-modularity/dist/echarts-graph-modularity.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    const dataCount = 5e5;
+option = {
+  title: {
+    text: echarts.format.addCommas(dataCount) + ' Data',
+    left: 10
+  },
+  toolbox: {
+    feature: {
+      dataZoom: {
+        yAxisIndex: false
+      },
+      saveAsImage: {
+        pixelRatio: 2
+      }
+    }
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  grid: {
+    bottom: 90
+  },
+  dataZoom: [
+    {
+      type: 'inside'
+    },
+    {
+      type: 'slider'
+    }
+  ],
+  xAxis: {
+    data: ['03/03/2025','04/03/2025','05/03/2025','06/03/2025','07/03/2025','10/03/2025','11/03/2025','12/03/2025','13/03/2025','14/03/2025','17/03/2025','18/03/2025','19/03/2025','20/03/2025','21/03/2025','24/03/2025','25/03/2025','26/03/2025','27/03/2025'], 
+    silent: false,
+    splitLine: {
+      show: false
+    },
+
+  },
+  yAxis: {
+    splitArea: {
+      show: false
+    }
+  },
+  series: [
+    {
+      type: 'bar',
+      data :  [100,98.96445193,98.07162367,98.25072862,102.8785702,103.5700924,101.7429441,99.72872756,101.0450324,102.1933036,102.687922,102.5844751,100.8256553,100.4737115,99.89715299,98.91776966,98.47264773,99.93206605,100.990644],
+      // Set `large` for large data amount
+      //large: true,
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

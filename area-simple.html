@@ -1,5 +1,6 @@
 <!--
-	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=area-simple
+	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=area-simple&code=DYUwLgBAJghmIQLwQNoHIAMBmA9NnATBgQKxoA0mALHrkaRZibYcWZRgGwv3uYDsPNowCMGIQ0oiREviIKzRufL1E0VwqYI2S0IgByKpATiNoiZgjJ18C6upvPMbjAtxeUC2hwwC6AbgAoUEhYMBgkVDEMcmN9ADpjTioqEhFjLFiEjH4RTgIsTn4s-NIcgn188jECeP1-fRJ-YmrseKaMDGM7VpF4_ioCYxSRWON-iv4vEk5e-IxU7B6a-PSsLGxZlc567oJW2pJ9FP401ow60k4SEkzo-Kp-LFyREjG641ySIeMS4xF-PxOElZnEHlNkoDMsZxhkiJxOBg3vcYVwUgFAgB7AAOYAAlpiAHaRADegQgEDAmMxwHx2IAXBAyRSKWAAE54gDmnJAbMZaBgAA88QBnCjklnYzEivH4omMgBmAFdCQBjOXEgAUuIAlEyJSyIGzwEq2cSULiUBhfOQIHoMABSNAYw0AXwlrvIEvxYFAjOZLNACrA_NVIEJ8DZ4sN8EFIbtABkYGyeRAAILGiIAYQAFsmwGgPV7WdTgAAjTGC_0GiAKkBwU0gauGilhGAALWpAFtmy2KQBPNPCkUASUJUBAVbthKJIELfc9NYpxpFVON_sXfZFMAAbiA06OuzAeRua-6KZuIIKh6Le6z-9im3bVXAQJzMWz-9GWRWVbBPwA4jADK1jAwAiiAxYsm2jJhCARYSoOw53pSD5PmgO5gUqc5QRSv7jsm_ZASBVq2vajrOghrZwB23aMigNYBjGaH8nihIyhO36Gqu-aMjES4QOGUCMmIZ64fqW7hGy8b8X2QkiRgZ4SjaEoQRyIAivRjECYSMBduhY4ToKXEsmALF2sAbE4QJIr9l2FbAPyM6EtZW56dilmEpy_K0mAZYmRSsogF2ADKZl-hJfYQKqNIfvyKZlpqpBvBAzS2iIWAiDq84tpehrJvWYX9hFTEtjFwBxRALkAO6CaqebSSK8ScmywE5niqrxAmVnJgBrVQHi4ZgJqMQQKNo2jKgAmGqVUUQJiCoKhBMniXN5WVWgCVJTc6VHLaOzZdNLJ5VFs1RQtS3gCJq1RetfJ2ltyW2mlEAZVlOVzeeUW-DqAkndR4SwTRSkUr4gSuv4QA
+	⚠ Please be aware that this chart is not an official demo of Apache ECharts but is made by user-generated code.
 -->
 <!DOCTYPE html>
 <html lang="en" style="height: 100%">
@@ -42,15 +43,8 @@
     
     var option;
 
-    let base = +new Date(1968, 9, 3);
-let oneDay = 24 * 3600 * 1000;
-let date = [];
-let data = [Math.random() * 300];
-for (let i = 1; i < 20000; i++) {
-  var now = new Date((base += oneDay));
-  date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
-  data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
-}
+    let date = ['03/03/2025','04/03/2025','05/03/2025','06/03/2025','07/03/2025','10/03/2025','11/03/2025','12/03/2025','13/03/2025','14/03/2025','17/03/2025','18/03/2025','19/03/2025','20/03/2025','21/03/2025','24/03/2025','25/03/2025','26/03/2025','27/03/2025'];
+let data = [100,98.96445193,98.07162367,98.25072862,102.8785702,103.5700924,101.7429441,99.72872756,101.0450324,102.1933036,102.687922,102.5844751,100.8256553,100.4737115,99.89715299,98.91776966,98.47264773,99.93206605,100.990644];
 option = {
   tooltip: {
     trigger: 'axis',
@@ -93,7 +87,7 @@ option = {
   ],
   series: [
     {
-      name: 'Fake Data',
+      name: 'Index',
       type: 'line',
       symbol: 'none',
       sampling: 'lttb',

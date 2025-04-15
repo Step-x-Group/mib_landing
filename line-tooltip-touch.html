@@ -1,0 +1,238 @@
+<!--
+	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=line-tooltip-touch&renderer=svg&code=DYUwLgBAlgdgJiAHhAvBA2gKAhAjABnwBoIBOADgDpSA2AFjoFZdSBmEiy_AdlxoCZWNbhyr9GPfuQEkC_SuW7lG3fP1n5WlFYVL86RbHny5K3Ov1INcHUmand-3RjQ2n8TTfo3yWrVpquxvI0inrqwdrkDM42RgT4CuI0jIzsxol03Ky8uIy2CqS8jJakotS43Nw0tEGcWfz0Vemkdmz8-DQ0-PnxhNSknQyYALoA3JigkADuAIZgIABOqBhGrdQpdHqMZWRtXfRO5AW1QuI2exuqrKR5J6FbtxHrtMqW0YY4L6GM5Gf3jC2rD49xyylYBkutDoJhukO-dHInVwxyhAlIEiknzRlX8wnuuC2eXyOIkKl231wTiq9x6hIp-0JQlca3273I5FGEymEAAxrNFgAjAD2MBWWBwNUouCprFKEVCCmkf3wehIituXQx3F2ip1eiKQUVNGBQOY6qo9E6_EJ2MVO06YRJUoIAiE6rsFn8OVaHsodDkSlYzrsUnIxM6fp2_Bj9GORil5my-hYfqq2XMgLTAhqziNdiqXQ8zj9HP81khifMlUEZQTdlSLAY9C5mAA9G2eXBZgBPADO4oA5Jo2yOOuJB0Rh3RR6w2-PGJPh4xZ_O1Iup51Vwulzxt-ulwR9xOpzLjxvB1Tz4e52OD6eZ3eT5fuNfT-Q35fSJ-Oj_cD_HznHcp3EH8aB_V8n0XcZJnAaBuzAWZxRgnlpgQpC0HQFC4N5dDkO5ODu37RDFkgNAAGoYBAaYIAAEXmEAAAoFxIdJWAASgIyBRRAeiexWfQIAAKggIRCGEjJ8AmAAzYVlkYgA3AVoBWXAxhUgAeaB4CQShQBgABzMAAAt1KgcjyPYiAAG8jCU5YiJWSjqLohjGMYoi-xIyByLQKAJJ4vj2M4owoHQygAAcAFc-2Mxj0CIkhYAQRB0CgEYRhCnA0PmWZIpiuKEt7Eg5gWRY0oyrK-XC6LYvixK-QFEUYAqzKJgAX0wYUIrAKBRRWWycF6sBQAALhsowcFAaSwHGwdeRAGAysnSaIAWRBZogQcABVhWFXqIogWZ4AgdCAC09oAWwgfqAFlhUFKBQDokAFKgBbByMdrsVAAzFrgcbBpwNburmkUwDAYVLpW4HTty8b0EHABJJbFt60VBxGL7sUh4VgAOwHVrARYoAMv7FgAeRgOaYB4mHgYi4U-ygdHqYgaSopgXlWYgRieqsoHYcWcAosWMV0B69B8BGWQAhg2HOpwb6jFx4ARUQQnYemzb5rRpZ6ZwFmQEugBlKAAC8QHG8RsSG0GIFSW32ZAeZRatibYZwc6rs1z2cB7ABBRAoD7FGUppunVqVp2cGFry5Pd6zFeB5PlZwRAg5D32hp7CL3cHXrLpAA2juDvsAAVhVgMrs-BpTgCi_OOj4ABaAgW-4EucD7GBZgi8bicbmOIGAWAQBNsAezGj2_b5PG5LmgBiZxwwAIVorvgemMKTOtqOIDTz3gFmQUQGAWvYdi4VpgHxYh_3nBZMWS75hr9nOe5vqxT5gVZkuvsBYP2BsLMAosxQgF5MZAUYA-yUCfi_MAcC5IIO2lAIujFBw9iwT2Fut1botzgHAScEAIq_3_pQeujcqp-0Pn7QUsxeQAGsDKLGFJzOAABheeiwl4r1wOvT6NDh5QPgNPQWnsr43zWnfEAw8cC8m4bw34_CN772TtHVafYIqjzAAAGTHhfCAkjxrSVmMAPsIBVqp2xIHMutdJ55zmpQ4uTtZhl1QUwwxsBmYIFvo3KxTstE6P0VRQxxj2ZmIsQE1abiQ66JPmfLxMAfHu0HrI_e8DX5LDmtZZx7UAA6MBBEpydubcaBBsZGBYWFex9sZTEFWtrcpvQhak2MptO4q1jIgDaR07olSva5QulDBGq1xE50cVtbxYUXH7xMqwiG08JBWKMDLIwFiSYgD7KM2G4yIC9yLnNMOSBN4OPzqPKim8-yXT2rvaR98_Z9h7JdEU58tq8igIsXkoArnPNeWbS240WkSL_to2ABk5qzAUksWYf1N5G1NpPMRQCFHAAXltRePBVAADFsXFIVsPLyDDGGQs3gKF2E8p6JxRYo_ZLkIFQNIrAlhfdjLvUoCEl2iwADiixZhwCgGjRixAIAipFRcCUs8cB7L9sKaS0kLGbQaVK2GqL0WDkWAZehjFfhEBpIIdgiRyDsXxbPWhs8ZWezlQq8A5S5GezVTwramrtW6v1f4IgiQOKmpoUAzKajh7oXGmFXK0Tdn7wOfnAA6gxRYpzc7nLHlcm5-1jJ-PSY8v5eM5ofK-T8wlWbgAAvdsCy-oKLkQq2lCmFcLh4IspciqVjql7YvEEUPFAb97ktmA26lTbaVURogy6BzK-URTZbyDlY8BS8v5YKpawqSBitkCQSVUrLWw2tYq8ayqVXyNpRqrVsxmK4HYI4IgVJiBGpNUAjRe6N3Ay3bavA9rVUHpdcem0Z71CXs9ZQb1t6D5-vYp2v2QaIA5UQmG4GezI1zQ4U1DGw8zlzQubMx5Ka7lpILS87N7zPnfPQxIwtxagWEvLeCyF0K-W1v3vWpFfbZ7Noxa2nY3AO1CK7cLHtDHDH7rRU6wdEBh1MsoCy8d7LOUzr5QKoVy7RUrtWPewDOAn1KtfcDZjh7tVfr1T-jof7jU-s9uav2D7VPyu3S-lTc8BNzQ_Se79F6DNepvXu9Rnt_WcbA_DaqoaFarMwO1MYQA
+	⚠ Please be aware that this chart is not an official demo of Apache ECharts but is made by user-generated code.
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://echarts.apache.org/en/js/vendors/echarts-gl/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://echarts.apache.org/en/js/vendors/echarts-stat/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-graph-modularity extension
+  <script type="text/javascript" src="https://echarts.apache.org/en/js/vendors/echarts-graph-modularity/dist/echarts-graph-modularity.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'svg',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    let index = [
+  100, 98.96445193, 98.07162367, 98.25072862, 102.8785702, 103.5700924,
+  101.7429441, 99.72872756, 101.0450324, 102.1933036, 102.687922, 102.5844751,
+  100.8256553, 100.4737115, 99.89715299, 98.91776966, 98.47264773, 99.93206605,
+  100.990644
+];
+let water = [
+  99.96549259, 99.96664278, 99.96636251, 99.96703915, 99.96849912, 99.96852984,
+  99.96858362, 99.96549316, 99.96378534, 99.96401394, 99.96480618, 99.96295028,
+  99.96173367, 99.96149155, 99.96150579, 99.9612777, 99.9605149, 99.9614366,
+  99.9629888
+];
+let carbon = [
+  69.11232992, 68.88683092, 68.91669579, 68.7992976, 68.63149351, 68.6406214,
+  68.59068795, 69.106236, 69.42333799, 69.41027835, 69.28815506, 69.59222648,
+  69.74732419, 69.77737454, 69.76269756, 69.77660475, 69.88334414, 69.77417239,
+  69.55194464
+];
+//let days = ['03/03/2025','04/03/2025','05/03/2025','06/03/2025','07/03/2025','10/03/2025','11/03/2025','12/03/2025','13/03/2025','14/03/2025','17/03/2025','18/03/2025','19/03/2025','20/03/2025','21/03/2025','24/03/2025','25/03/2025','26/03/2025','27/03/2025'];
+let idata = [];
+let wdata = [];
+let cdata = [];
+let daystart = +new Date(2025, 3, 3);
+let oneDay = 24 * 3600 * 1000;
+for (var i = 1; i < index.length; i++) {
+  var day = +new Date((daystart += i * oneDay));
+  idata.push([day, index[i]]);
+  wdata.push([day, water[i]]);
+  cdata.push([day, carbon[i]]);
+}
+option = {
+  title: {
+    left: 'center',
+    text: 'Tootip and dataZoom on Mobile Device'
+  },
+  legend: {
+    top: 'bottom',
+    data: ['Intention']
+  },
+  tooltip: {
+    triggerOn: 'none',
+    position: function (pt) {
+      return [pt[0], 130];
+    }
+  },
+  toolbox: {
+    left: 'center',
+    itemSize: 25,
+    top: 55,
+    feature: {
+      dataZoom: {
+        yAxisIndex: 'none'
+      },
+      restore: {}
+    }
+  },
+  xAxis: {
+    type: 'time',
+    axisPointer: {
+      value: '2016-10-7',
+      snap: true,
+      lineStyle: {
+        color: '#7581BD',
+        width: 2
+      },
+      label: {
+        show: true,
+        formatter: function (params) {
+          return echarts.format.formatTime('yyyy-MM-dd', params.value);
+        },
+        backgroundColor: '#7581BD'
+      },
+      handle: {
+        show: true,
+        color: '#7581BD'
+      }
+    },
+    splitLine: {
+      show: false
+    }
+  },
+  yAxis: {
+    type: 'value',
+    axisTick: {
+      inside: true
+    },
+    splitLine: {
+      show: false
+    },
+    axisLabel: {
+      inside: true,
+      formatter: '{value}\n'
+    },
+    z: 10
+  },
+  grid: {
+    top: 110,
+    left: 15,
+    right: 15,
+    height: 160
+  },
+  dataZoom: [
+    {
+      type: 'inside',
+      throttle: 50
+    }
+  ],
+  series: [
+    {
+      name: 'Index',
+      type: 'line',
+      smooth: true,
+      symbol: 'circle',
+      symbolSize: 5,
+      sampling: 'average',
+      itemStyle: {
+        color: '#0770FF'
+      },
+      stack: 'a',
+      areaStyle: {
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgba(58,77,233,0.8)'
+          },
+          {
+            offset: 1,
+            color: 'rgba(58,77,233,0.3)'
+          }
+        ])
+      },
+      data: idata
+    },
+    {
+      name: 'Water',
+      type: 'line',
+      smooth: true,
+      symbol: 'circle',
+      symbolSize: 5,
+      sampling: 'average',
+      itemStyle: {
+        color: '#F2597F'
+      },
+      areaStyle: {
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgba(213,72,120,0.8)'
+          },
+          {
+            offset: 1,
+            color: 'rgba(213,72,120,0.3)'
+          }
+        ])
+      },
+      data: wdata
+    },
+    {
+      name: 'Carbon',
+      type: 'line',
+      smooth: true,
+      symbol: 'circle',
+      symbolSize: 5,
+      sampling: 'average',
+      itemStyle: {
+        color: '#F2597F'
+      },
+      areaStyle: {
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgba(213,72,120,0.8)'
+          },
+          {
+            offset: 1,
+            color: 'rgba(213,72,120,0.3)'
+          }
+        ])
+      },
+      data: cdata
+    }
+  ]
+};
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

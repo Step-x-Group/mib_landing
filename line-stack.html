@@ -1,0 +1,92 @@
+<!--
+	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=line-stack&code=PYBwLglsB2AEC8sDeAoWtJgDYFMBcya6GOAHmAQOQDKYAhgMYDWOAJrADITQ6VEC-AGiJhgwLJBAFUxDACcIAc0U45VOqQgBnPuiFFcK6K2lF0rOvQIBtSgFEAtnQhZKg2JQCq0KHACCrDrulABqEKw4wLABQR4AIhByOAxgbh7UOHRyDAAWsHbQity8ALoCwuiKCiaEsrgAZhQeAMwApG5msAqKOU2UACztFcQARsBgog5UbR2yDDD03Bx0IzhYBGByAK445SJiWGOkprL1mWBbSSeysFp0AG44floAkk4q0vydX3rDpH6aLTXdBgACeIHwHgYlhwimAclBs1GwC2xiyoIA4nQpLB6nQsFocMNzJY6DZKAAGZoAeip1IATBT6QBWNyU_q0mmMllsinMzkMpmswSUgBsAu5wspAHYJUK2QBGClynkihUKlVShX0zWKml0yWKjkG-Vq2Um1WUBUADl1aoAnHbKIynfSNRapfTjVzTc7-R62fTxQGRfTzT6eWVfkRQQDtMCMODIZR7vidrpYPp0ISFDggbBrJ0ZDdoHQHMmAEIAOQxsBexjISNkYIhVCwxSbxC09GYVAAKuN8Z2SVYC0qKYJ7daAHT20X9frMhX25qTmcU6UK0X05qi6Vr6csjf063bwRK-nT63S63M6VM89U6d3ikU-1ex8K6fS_r0-0LhVJ3tb8T2lMNmVFT9pwpRcqQ_C9p2XZpmipSCENFa933pR9L2Za0F2lJdHwpK8WVFZlmVXcdp36aVmk3BVmSAq97U3Zk_3tA97QVaVpVFOdIKnGiwPnXjV3tYCV0ZUVRT5YjZ3tCl536KNiCzWAyn4ABuIA
+	⚠ Please be aware that this chart is not an official demo of Apache ECharts but is made by user-generated code.
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://echarts.apache.org/en/js/vendors/echarts-gl/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://echarts.apache.org/en/js/vendors/echarts-stat/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-graph-modularity extension
+  <script type="text/javascript" src="https://echarts.apache.org/en/js/vendors/echarts-graph-modularity/dist/echarts-graph-modularity.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  title: {
+    text: 'Stacked Line'
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['03/03/2025','04/03/2025','05/03/2025','06/03/2025','07/03/2025','10/03/2025','11/03/2025','12/03/2025','13/03/2025','14/03/2025','17/03/2025','18/03/2025','19/03/2025','20/03/2025','21/03/2025','24/03/2025','25/03/2025','26/03/2025','27/03/2025']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      name: 'BNG Index',
+      type: 'line',
+      stack: 'Total',
+      data: [100,98.96445193,98.07162367,98.25072862,102.8785702,103.5700924,101.7429441,99.72872756,101.0450324,102.1933036,102.687922,102.5844751,100.8256553,100.4737115,99.89715299,98.91776966,98.47264773,99.93206605,100.990644]
+    },
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
