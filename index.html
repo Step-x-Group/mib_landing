@@ -201,73 +201,18 @@
           </div>
         </div>
       </section>
-    --<style>
-        #pdf-container {
-            width: 100%;
-            height: 600px;
-            border: 1px solid #ccc;
-            overflow: auto;
-        }
-    </style>>
-      <!-- Market Size Section -->
-      <div id="pdf-container"></div>
-
-      <script>
-          // Asynchronous download of PDF
-          var url = 'data/MIB_AI.pdf';
-          // Loaded via <script> tag, create shortcut to access PDF.js exports.
-          const pdfjsLib = window['pdfjs-dist/build/pdf'];
-
-          // The workerSrc property shall be specified.
-          pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/5.0.375/pdf.worker.min.mjs';
-          // Loaded via <script> tag, create shortcut to access PDF.js exports.
-          //var pdfjsLib = window['pdfjs-dist/build/pdf'];
-
-          // The workerSrc property shall be specified.
-          //pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs/build/pdf.worker.js';
-
-          // Asynchronous download of PDF
-          var loadingTask = pdfjsLib.getDocument(url);
-          loadingTask.promise.then(function(pdf) {
-              console.log('PDF loaded');
-
-              // Fetch the first page
-              var pageNumber = 1;
-              pdf.getPage(pageNumber).then(function(page) {
-                  console.log('Page loaded');
-
-                  var scale = 1.5;
-                  var viewport = page.getViewport({scale: scale});
-
-                  // Prepare canvas using PDF page dimensions
-                  var canvas = document.createElement('canvas');
-                  var context = canvas.getContext('2d');
-                  canvas.height = viewport.height;
-                  canvas.width = viewport.width;
-
-                  // Append canvas to the container
-                  document.getElementById('pdf-container').appendChild(canvas);
-
-                  // Render PDF page into canvas context
-                  var renderContext = {
-                      canvasContext: context,
-                      viewport: viewport
-                  };
-                  var renderTask = page.render(renderContext);
-                  renderTask.promise.then(function () {
-                      console.log('Page rendered');
-                  });
-              });
-          }, function (reason) {
-              console.error(reason);
-          });
-      </script>
-
-
+      -->
+      <!--Market Size Section -->
       <section class="section section-beige">
         <div class="container">
           <div class="section-header">
             <h2 class="section-title">Market Opportunity</h2>
+            
+            <div class="button-group button-center">
+              <a href="./data/MIB_AI.pdf">
+                <button class="button button-outline button-large">Check our pitch deck</button>
+              </a>
+            </div>
           </div>
           <div class="grid-3 grid-center">
             <div class="card card-white card-center">
