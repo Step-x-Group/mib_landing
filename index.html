@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="styles.css">
   <!-- Lucide Icons via CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/pdf.js/5.0.375/pdf.min.mjs></script>
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/pdf.js/5.0.375/pdf_viewer.min.css></script>
+  <style>
+    #pdf-container {
+        width: 100%;
+        height: 600px;
+        border: 1px solid #ccc;
+        overflow: auto;
+    }
+  </style>
 </head>
 <body>
   <div class="wrapper">
@@ -103,9 +113,8 @@
               </div>
               <div class="card-content">
                 <ul class="feature-list">
-                  <li>• EU ETS Report</li>
-                  <li>• Biodiversity Sentiment Analysis</li>
-                  <li>• Nature and Climate Tech Report</li>
+                  <li>• EU ETS Reports</li>
+                  <li>• Macro Reports</li>
                   <li>• Weekly Podcast</li>
                 </ul>
               </div>
@@ -113,13 +122,13 @@
             <div class="card card-white">
               <div class="card-header">
                 <i data-lucide="message-square" class="icon"></i>
-                <h3 class="card-title">Economist Bot</h3>
+                <h3 class="card-title">Assistant AI Economist</h3>
               </div>
               <div class="card-content">
                 <ul class="feature-list">
                   <li>• Impact Analysis</li>
                   <li>• Cost Benefit Analysis</li>
-                  <li>• Tariffs</li>
+                  <li>• Indexing</li>
                   <li>• Forecasting and Nowcasting</li>
                 </ul>
               </div>
@@ -192,12 +201,18 @@
           </div>
         </div>
       </section>
-    -->
-      <!-- Market Size Section -->
+      -->
+      <!--Market Size Section -->
       <section class="section section-beige">
         <div class="container">
           <div class="section-header">
             <h2 class="section-title">Market Opportunity</h2>
+            
+            <div class="button-group button-center">
+              <a href="./data/MIB_AI.pdf">
+                <button class="button button-outline button-large">Check our pitch deck</button>
+              </a>
+            </div>
           </div>
           <div class="grid-3 grid-center">
             <div class="card card-white card-center">
@@ -223,7 +238,7 @@
               <div class="card-content">
                 <p class="market-label">SERVICEABLE OBTAINABLE MARKET</p>
               </div>
-            </div>
+           M </div>
           </div>
         </div>
       </section>
