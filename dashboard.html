@@ -4,9 +4,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biodiversity Net Gain Index | Made in Bloomsbury</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Interactive dashboard tracking environmental metrics and biodiversity data to support sustainable decision-making.">
+    <meta name="keywords" content="environmental dashboard, biodiversity metrics, carbon compliance, natural capital, sustainability data">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Environmental Dashboard | Made in Bloomsbury">
+    <meta property="og:description" content="Interactive dashboard tracking environmental metrics and biodiversity data.">
+    <meta property="og:url" content="https://www.madeinbloomsbury.com/dashboard.html">
+    <meta property="og:type" content="website">
+
+    <!-- Apache ECharts Library -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     <!-- Lucide Icons via CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Base styles to match Made in Bloomsbury */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .logo-circle {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            font-weight: 500;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .main-nav a:hover {
+            color: #666;
+        }
+
+        .subscribe-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Main content styles */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 3rem 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        /* Dashboard sections */
+        .dashboard-section {
+            margin: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Chart containers */
+        .chart-container {
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 0.25rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .chart-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .chart-description {
+            font-size: 0.875rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .chart {
+            width: 100%;
+            height: 300px;
+        }
+
+        .full-width-chart {
+            grid-column: 1 / -1;
+        }
+
+        /* Info boxes */
+        .info-box {
+            background-color: #fff9e6;
+            border: 1px solid #f0e6c0;
+            border-radius: 0.25rem;
+            padding: 1.5rem;
+        }
+
+        .info-box-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box-content {
+            font-size: 0.875rem;
+        }
+
+        /* CTA section */
+        .cta-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .cta-text {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .cta-btn-primary {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .cta-btn-secondary {
+            background-color: transparent;
+            color: #000;
+            border: 1px solid #000;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-nav {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -39,17 +246,208 @@
         <!-- Main Content -->
         <main class="main-content">
             <h1 class="page-title">Biodiversity Net Gain Index</h1>
-            <div class="chart-container">
+            <!-- <div class="chart-container">
                 <!-- Main Chart -->
-                <!--<div class="chart-container">-->
+                <!--<div class="chart-container">
                 <img src="/placeholder-images/biodiversity-trend-chart.jpg" alt="Biodiversity Net Gain Index Trend Chart" class="chart-image">
-                <!-- If you have actual images, replace the src with the actual path -->
-                <!-- Alternatively, you can use: -->
-                <!-- <img src="/placeholder.svg?height=300&width=1000" alt="Biodiversity Net Gain Index Trend Chart" class="chart-image"> -->
-            </div>
+                <img src="/placeholder.svg?height=300&width=1000" alt="Biodiversity Net Gain Index Trend Chart" class="chart-image">
+                </div> -->
 
             <!-- Two Column Charts -->
+            <section class="dashboard-section">
+                <h2 class="section-title">Key Performance Indicators</h2>
+
+                <div class="dashboard-grid">
+                    <!-- ECharts Simple Line Chart (Full Width) -->
+                    <div class="chart-container full-width-chart">
+                        <h3 class="chart-title">Environmental Performance Trend</h3>
+                        <p class="chart-description">Monthly tracking of environmental performance metrics over time.</p>
+                        <div id="lineChart" class="chart"></div>
+                    </div>
+
+                    <!-- Additional Charts (can be added later) -->
+                    <div class="chart-container">
+                        <h3 class="chart-title">Carbon Emissions</h3>
+                        <p class="chart-description">Quarterly carbon emissions by sector.</p>
+                        <div id="carbonChart" class="chart"></div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3 class="chart-title">Resource Utilization</h3>
+                        <p class="chart-description">Resource efficiency metrics by category.</p>
+                        <div id="resourceChart" class="chart"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Info Section -->
+            <section class="dashboard-section">
+                <div class="dashboard-grid">
+                    <div class="info-box">
+                        <h3 class="info-box-title">What?</h3>
+                        <div class="info-box-content">
+                            <p>Businesses face complex, fragmented data when trying to navigate carbon compliance, natural capital, and resource management. This lack of clarity leads to higher costs, missed opportunities, and confusion.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 class="info-box-title">Why?</h3>
+                        <div class="info-box-content">
+                            <p>Without streamlined, data-driven research and economic analysis, organizations risk non-compliance, inefficient resource use, and inability to track the return on their sustainability efforts.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="cta-section">
+                <p class="cta-text">Let's create value and save costs together</p>
+                <!--<div class="cta-buttons">
+                    <button class="cta-btn-primary">Subscribe to Our Research →</button>
+                </div>-->
+                <a href="https://madeinbloomsbury.substack.com/" style="margin: 0 auto;">
+                  <button class="button button-primary button-large" >Subscribe to our research</button>
+                </a>
+            </section>
         </main>
     </div>
+
+<<!-- ECharts Initialization Script -->
+    <script>
+        // Initialize ECharts Line Chart
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the main line chart
+            const lineChartDom = document.getElementById('lineChart');
+            const lineChart = echarts.init(lineChartDom);
+
+            // Line chart options (from the ECharts simple line example)
+            const lineOption = {
+                xAxis: {
+                    type: 'category',
+                    data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [
+                    {
+                        data: [150, 230, 224, 218, 135, 147, 260, 270, 240, 230, 220, 210],
+                        type: 'line',
+                        smooth: true,
+                        lineStyle: {
+                            color: '#333',
+                            width: 2
+                        },
+                        areaStyle: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [
+                                    {
+                                        offset: 0,
+                                        color: 'rgba(51, 51, 51, 0.3)'
+                                    },
+                                    {
+                                        offset: 1,
+                                        color: 'rgba(51, 51, 51, 0.05)'
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ],
+                tooltip: {
+                    trigger: 'axis'
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                }
+            };
+
+            // Apply options to the chart
+            lineChart.setOption(lineOption);
+
+            // Make chart responsive
+            window.addEventListener('resize', function() {
+                lineChart.resize();
+
+                // Resize other charts if they exist
+                if (carbonChart) carbonChart.resize();
+                if (resourceChart) resourceChart.resize();
+            });
+
+            // Placeholder for additional charts
+            // These can be implemented later with actual data
+
+            // Carbon Emissions Chart (placeholder)
+            const carbonChartDom = document.getElementById('carbonChart');
+            const carbonChart = echarts.init(carbonChartDom);
+
+            const carbonOption = {
+                xAxis: {
+                    type: 'category',
+                    data: ['Q1', 'Q2', 'Q3', 'Q4']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [
+                    {
+                        data: [120, 110, 95, 90],
+                        type: 'bar',
+                        itemStyle: {
+                            color: '#555'
+                        }
+                    }
+                ],
+                tooltip: {
+                    trigger: 'axis'
+                }
+            };
+
+            carbonChart.setOption(carbonOption);
+
+            // Resource Utilization Chart (placeholder)
+            const resourceChartDom = document.getElementById('resourceChart');
+            const resourceChart = echarts.init(resourceChartDom);
+
+            const resourceOption = {
+                radar: {
+                    indicator: [
+                        { name: 'Water', max: 100 },
+                        { name: 'Energy', max: 100 },
+                        { name: 'Materials', max: 100 },
+                        { name: 'Waste', max: 100 },
+                        { name: 'Land Use', max: 100 }
+                    ]
+                },
+                series: [
+                    {
+                        type: 'radar',
+                        data: [
+                            {
+                                value: [80, 70, 60, 85, 75],
+                                name: 'Efficiency',
+                                areaStyle: {
+                                    color: 'rgba(51, 51, 51, 0.2)'
+                                },
+                                lineStyle: {
+                                    color: '#333'
+                                }
+                            }
+                        ]
+                    }
+                ]
+            };
+
+            resourceChart.setOption(resourceOption);
+        });
+    </script>
 </body>
 </html>
