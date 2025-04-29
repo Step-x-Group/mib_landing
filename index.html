@@ -25,11 +25,13 @@
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     <style>
         #lineChart {
-            width: 600px;
-            height: 400px;
+            width: 100%;
+            height: 100%;
+            min-width: 320px;
+            min-height: 300px;
             margin: 20px auto;
         }
-        #lineChart2 {
+        /* #lineChart2 {
             width: 300px;
             height: 200px;
             margin: 10px auto;
@@ -38,7 +40,7 @@
             width: 300px;
             height: 200px;
             margin: 10px auto;
-        }
+        } */
     </style>
 </head>
 <body>
@@ -47,8 +49,8 @@
       import init, { load_data } from './hello_wasm.js';
 
       let chartInstance = null;
-      let carbonChart = null;
-      let waterChart = null;
+      // let carbonChart = null;
+      // let waterChart = null;
       let wasmInitialized = false;
 
       async function initializeApp() {
@@ -56,8 +58,8 @@
               await init();
               wasmInitialized = true;
               chartInstance = echarts.init(document.getElementById('lineChart'));
-              carbonChart = echarts.init(document.getElementById('lineChart2'));
-              waterChart = echarts.init(document.getElementById('lineChart3'));
+              // carbonChart = echarts.init(document.getElementById('lineChart2'));
+              // waterChart = echarts.init(document.getElementById('lineChart3'));
               //const dom = document.getElementById('lineChart');
               setupInitialChart();
               await updateChartData();
@@ -75,22 +77,22 @@
                   data: []
               }]
           });
-          carbonChart.setOption({
-              xAxis: { type: 'category' },
-              yAxis: { type: 'value' },
-              series: [{
-                  type: 'line',
-                  data: []
-              }]
-          });
-          waterChart.setOption({
-              xAxis: { type: 'category' },
-              yAxis: { type: 'value' },
-              series: [{
-                  type: 'line',
-                  data: []
-              }]
-          });
+          // carbonChart.setOption({
+          //     xAxis: { type: 'category' },
+          //     yAxis: { type: 'value' },
+          //     series: [{
+          //         type: 'line',
+          //         data: []
+          //     }]
+          // });
+          // waterChart.setOption({
+          //     xAxis: { type: 'category' },
+          //     yAxis: { type: 'value' },
+          //     series: [{
+          //         type: 'line',
+          //         data: []
+          //     }]
+          // });
       }
 
       async function updateChartData() {
@@ -104,9 +106,9 @@
               // alert(xElements);
               const indexElements = parsedData.map(y => y[3]); // Extract the index, 4th elements
               // alert(indexElements);
-              const carbonElements = parsedData.map(y => y[1]); // Extract the carbon data, 2nd elements
+              // const carbonElements = parsedData.map(y => y[1]); // Extract the carbon data, 2nd elements
               // alert(carbonElements);
-              const waterElements = parsedData.map(y => y[2]); // Extract the water data, 3rd elements
+              // const waterElements = parsedData.map(y => y[2]); // Extract the water data, 3rd elements
               //alert(waterElements);
              
               chartInstance.setOption({
@@ -146,38 +148,38 @@
                         }
                     }]
                 }, true); // TRUE FOR NOT MERGING PREVIOUS CONFIG
-              carbonChart.setOption({
-                  xAxis: { type: 'category',
-                      data : xElements,
-                   },
-                  yAxis: { 
-                      type: 'value',
-                      min: 85000, 
-                      show: false,
-                  },
-                  series: [{
-                      type: 'line',
-                      data: carbonElements,
-                      smooth: true,
-                      showSymbol: false
-                  }]
-              }, true);
-              waterChart.setOption({
-                  xAxis: { type: 'category',
-                      data : xElements,
-                   },
-                  yAxis: { 
-                      type: 'value',
-                      min: 17000000, 
-                      show: false,
-                  },
-                  series: [{
-                      type: 'line',
-                      data: waterElements,
-                      smooth: true,
-                      showSymbol: false
-                  }]
-             }, true);
+            //   carbonChart.setOption({
+            //       xAxis: { type: 'category',
+            //           data : xElements,
+            //        },
+            //       yAxis: { 
+            //           type: 'value',
+            //           min: 85000, 
+            //           show: false,
+            //       },
+            //       series: [{
+            //           type: 'line',
+            //           data: carbonElements,
+            //           smooth: true,
+            //           showSymbol: false
+            //       }]
+            //   }, true);
+            //   waterChart.setOption({
+            //       xAxis: { type: 'category',
+            //           data : xElements,
+            //        },
+            //       yAxis: { 
+            //           type: 'value',
+            //           min: 17000000, 
+            //           show: false,
+            //       },
+            //       series: [{
+            //           type: 'line',
+            //           data: waterElements,
+            //           smooth: true,
+            //           showSymbol: false
+            //       }]
+            //  }, true);
           } catch (error) {
               console.error('Data update failed:', error);
           }
@@ -199,8 +201,8 @@
       window.addEventListener('beforeunload', () => {
           if (chartInstance && !chartInstance.isDisposed()) {
               chartInstance.dispose();
-              carbonChart.dispose();
-              waterChart.dispose();
+              // carbonChart.dispose();
+              // waterChart.dispose();
           }
       });
 
@@ -393,28 +395,14 @@
       <section id="pocs" class="section section-white">
         <div class="container">
           <div class="section-header">
-            <h2 class="section-title">Environmental Performance Index</h2>
+            <h2 class="section-title">Biodiversity Net Gain Index</h2>
           </div>
-          <div class="grid-2">
-            <div>
-              <h2 class="section-title">Biodiversity Index</h2>
               <p class="section-text">
               </p>
               <div id="lineChart"></div>
-            </div>
-            <div class="mission-cards">
-              <div class="card card-beige">
-                <h3 class="card-title">Habitat composition</h3>
-                <div id="lineChart2"></div>
-              </div>
-              <div class="card card-beige">
-                <div id="lineChart3"></div>
-              </div>
-            </div>
-          </div>
         </div>
 
-      </section>
+      </section> -->
       
       <!--Market Size Section -->
       <section class="section section-beige">
