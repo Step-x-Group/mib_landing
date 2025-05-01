@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Made in Bloomsbury helps organizations make data-driven decisions about carbon compliance, natural capital, and resource management for sustainable outcomes.">
-  <meta name="keywords" content="environmental markets, carbon compliance, natural capital, biodiversity net gain, sustainability, resource management, environmental data">
+  <meta name="keywords" content="environmental markets, carbon compliance, natural capital, biodiversity net gain, sustainability, resource management, environmental data, green economy, greentech, green investment, sustainable economy">
   <meta name="author" content="Made in Bloomsbury">
 
   <!-- Canonical URL (prevents duplicate content issues) -->
@@ -31,16 +31,6 @@
             min-height: 300px;
             margin: 20px auto;
         }
-        /* #lineChart2 {
-            width: 300px;
-            height: 200px;
-            margin: 10px auto;
-        }
-        #lineChart3 {
-            width: 300px;
-            height: 200px;
-            margin: 10px auto;
-        } */
     </style>
 </head>
 <body>
@@ -49,8 +39,6 @@
       import init, { load_data } from './hello_wasm.js';
 
       let chartInstance = null;
-      // let carbonChart = null;
-      // let waterChart = null;
       let wasmInitialized = false;
 
       async function initializeApp() {
@@ -58,9 +46,6 @@
               await init();
               wasmInitialized = true;
               chartInstance = echarts.init(document.getElementById('lineChart'));
-              // carbonChart = echarts.init(document.getElementById('lineChart2'));
-              // waterChart = echarts.init(document.getElementById('lineChart3'));
-              //const dom = document.getElementById('lineChart');
               setupInitialChart();
               await updateChartData();
           } catch (error) {
@@ -77,22 +62,6 @@
                   data: []
               }]
           });
-          // carbonChart.setOption({
-          //     xAxis: { type: 'category' },
-          //     yAxis: { type: 'value' },
-          //     series: [{
-          //         type: 'line',
-          //         data: []
-          //     }]
-          // });
-          // waterChart.setOption({
-          //     xAxis: { type: 'category' },
-          //     yAxis: { type: 'value' },
-          //     series: [{
-          //         type: 'line',
-          //         data: []
-          //     }]
-          // });
       }
 
       async function updateChartData() {
@@ -105,11 +74,6 @@
               const xElements = parsedData.map(x => x[0]); // Extract first elements
               // alert(xElements);
               const indexElements = parsedData.map(y => y[3]); // Extract the index, 4th elements
-              // alert(indexElements);
-              // const carbonElements = parsedData.map(y => y[1]); // Extract the carbon data, 2nd elements
-              // alert(carbonElements);
-              // const waterElements = parsedData.map(y => y[2]); // Extract the water data, 3rd elements
-              //alert(waterElements);
 
               chartInstance.setOption({
                     xAxis: { type: 'category',
@@ -148,46 +112,14 @@
                         }
                     }]
                 }, true); // TRUE FOR NOT MERGING PREVIOUS CONFIG
-            //   carbonChart.setOption({
-            //       xAxis: { type: 'category',
-            //           data : xElements,
-            //        },
-            //       yAxis: {
-            //           type: 'value',
-            //           min: 85000,
-            //           show: false,
-            //       },
-            //       series: [{
-            //           type: 'line',
-            //           data: carbonElements,
-            //           smooth: true,
-            //           showSymbol: false
-            //       }]
-            //   }, true);
-            //   waterChart.setOption({
-            //       xAxis: { type: 'category',
-            //           data : xElements,
-            //        },
-            //       yAxis: {
-            //           type: 'value',
-            //           min: 17000000,
-            //           show: false,
-            //       },
-            //       series: [{
-            //           type: 'line',
-            //           data: waterElements,
-            //           smooth: true,
-            //           showSymbol: false
-            //       }]
-            //  }, true);
           } catch (error) {
               console.error('Data update failed:', error);
           }
       }
 
+      // ********************************************
       // Initialize on load
-      // initializeApp();
-
+      // ********************************************
       window.addEventListener('load', initializeApp());
 
       // Event listeners
@@ -201,8 +133,6 @@
       window.addEventListener('beforeunload', () => {
           if (chartInstance && !chartInstance.isDisposed()) {
               chartInstance.dispose();
-              // carbonChart.dispose();
-              // waterChart.dispose();
           }
       });
 
@@ -336,64 +266,7 @@
         </div>
       </section>
 
-      <!-- Pricing Section -->
-      <!--<section id="pricing" class="section section-white">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Pricing Plans</h2>
-            <p class="section-text section-text-center">
-              Choose the plan that works best for your organization
-            </p>
-          </div>
-          <div class="grid-3">
-            <div class="card card-beige">
-              <div class="card-header">
-                <h3 class="card-title">Freemium</h3>
-                <p class="price">Free</p>
-              </div>
-              <div class="card-content">
-                <ul class="feature-list">
-                  <li>• 1 team account</li>
-                  <li>• Access to Weekly Podcast</li>
-                  <li>• Access to Weekly Research</li>
-                  <li>• Access to Notes</li>
-                </ul>
-              </div>
-            </div>
-            <div class="card card-beige card-highlighted">
-              <div class="card-header">
-                <h3 class="card-title">Teams</h3>
-                <p class="price">£2,900/year</p>
-              </div>
-              <div class="card-content">
-                <ul class="feature-list">
-                  <li>• 1 team account</li>
-                  <li>• Access to Exclusive Research</li>
-                  <li>• Discount for Economist Bot</li>
-                  <li>• Discount for Indices</li>
-                </ul>
-              </div>
-            </div>
-            <div class="card card-beige">
-              <div class="card-header">
-                <h3 class="card-title">Enterprise</h3>
-                <p class="price">Contact us</p>
-              </div>
-              <div class="card-content">
-                <ul class="feature-list">
-                  <li>• 50+ team accounts</li>
-                  <li>• Access to Exclusive Research</li>
-                  <li>• Discount for Economist Bot</li>
-                  <li>• Discount for Indices</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      -->
       <!--  solution examples section -->
-
       <section id="pocs" class="section section-white">
         <div class="container">
           <div class="section-header">
@@ -404,7 +277,7 @@
               <div id="lineChart"></div>
         </div>
 
-      </section> -->
+      </section>
 
       <!--Market Size Section -->
       <section class="section section-beige">
@@ -479,9 +352,6 @@
           <p class="section-text section-text-white section-text-center">
             Join over 2,000 subscribers who are already benefiting from our research and insights.
           </p>
-          <!--<div class="cta-form">
-            <input type="email" placeholder="Enter your email" class="cta-input">
-          </div>-->
           <div class="button-group" >
             <a href="https://madeinbloomsbury.substack.com/" style="margin: 0 auto;">
               <button class="button button-white button-large" >Subscribe to our research</button>
